@@ -8,7 +8,6 @@ declare_id!("PuzF3FCpbFa3GKdaTAhw7kS5uojzrMzk2EwfsZsZ2pi");
 
 #[program]
 pub mod lending {
-    use anchor_lang::solana_program::sysvar::instructions;
 
     use super::*;
 
@@ -30,5 +29,9 @@ pub mod lending {
 
     pub fn withdraw(ctx: Context<Withdraw>, amount: u64) -> Result<()> {
         process_withdraw(ctx, amount)
+    }
+
+    pub fn repay(ctx: Context<Repay>, amount: u64) -> Result<()> {
+        process_repay(ctx, amount)
     }
 }
