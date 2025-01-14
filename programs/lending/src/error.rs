@@ -6,4 +6,6 @@ pub enum ErrorCode {
     InsufficientFunds,
     #[msg("Over Repaying Borrowed amount")]
     OverRepay,
+    #[msg("Can't more than collateral")]
+    OverBorrowableAmount,
 }
