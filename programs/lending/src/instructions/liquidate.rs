@@ -82,7 +82,7 @@ pub fn process_liquidate(ctx: Context<Liquidate>) -> Result<()> {
     let health_factor = (total_collateral * collateral_bank.liquidation_threshold)/total_borrowed;
 
     if health_factor >= 1 {
-        return Err(ErrorCode::NotUndercollateralized.into());
+        return Err(ErrorCode::NotUnderCollateralized.into());
     }
 
     let liquidation_amount = total_borrowed * collateral_bank.liquidation_close_factor;
